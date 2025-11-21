@@ -10,11 +10,13 @@ Used to add records into a relation.
 These are three type of INSERT INTO queries which are as
 A)Inserting a single record
 **Syntax (Single Row):**
-```sql
+```
+sql
 INSERT INTO table_name (field_1, field_2, ...) VALUES (value_1, value_2, ...);
 ```
 **Syntax (Multiple Rows):**
-```sql
+```
+sql
 INSERT INTO table_name (field_1, field_2, ...) VALUES
 (value_1, value_2, ...),
 (value_3, value_4, ...);
@@ -26,144 +28,166 @@ INSERT INTO table_name SELECT * FROM other_table WHERE condition;
 ### 2. UPDATE
 Used to modify records in a relation.
 Syntax:
-```sql
+```
+sql
 UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
 ```
 ### 3. DELETE
 Used to delete records from a relation.
 **Syntax (All rows):**
-```sql
+```
+sql
 DELETE FROM table_name;
 ```
 **Syntax (Specific condition):**
-```sql
+```
+sql
 DELETE FROM table_name WHERE condition;
 ```
 ### 4. SELECT
 Used to retrieve records from a table.
 **Syntax:**
-```sql
+```
+sql
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/4edfbe94-d2a2-4790-aaac-56760b245cb8)
 
-```sql
--- Paste your SQL code below for Question 1
+```
+sql
+UPDATE Products SET quantity=(quantity*1.10);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/85a4836f-123c-4637-bcc7-d23e9f2fe1c4)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/01f97ed1-fc38-4cde-bdb4-a737c5af82b1)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE Employees SET first_name='John' WHERE department_id=80 AND commission_pct<0.35;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/9a1bed06-0e20-4777-8487-3ce48aecdd10)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/dd2d8229-5c68-45ab-8a30-d721e365512d)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE Employees SET email='not available',commission_pct=0.55 WHERE department_id=110;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/edcd4d72-71c4-4777-abf5-3e8ec9e27c6c)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/5477916f-1378-46b1-821b-541c1053cabd)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE Employees SET salary=8000 WHERE employee_id=105 AND salary<5000;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/e0fca6fc-a4f8-468a-a13c-c5faf9dde25a)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/1eca85d1-b3d9-4af5-8431-756c45189f44)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE Employees SET salary=salary*2 WHERE department_id=20 AND job_id like '%MAN';
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/8c8f2253-a802-4e5e-8a03-3cdfa6f11021)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/baa40d29-342f-4df1-9c43-d0ea4f364941)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Doctors WHERE doctor_id=1;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/e2ba0952-f9e3-4c6b-9694-8ab026b0a9a4)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/861f2edc-7e6c-4257-b7e8-bf14fdc659a6)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Customer WHERE GRADE=2;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/0610af38-38ed-458b-a24a-7938456be64e)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/bbcfde15-fdc4-4bf9-af97-9c76afa51fb3)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM Surgeries WHERE surgery_id=3 OR surgeon_id=4;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/2c63a4f7-ecef-4a17-af11-8d568054ab04)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/a9eb0580-b7a2-42cf-a238-d7f8724f3462)
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Doctors WHERE last_name is NULL;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/cee58d80-36cc-43b7-a9a1-034776d6bda4)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/9ee2dc3e-402d-4093-9609-81b72e094074)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+DELETE FROM Customer WHERE WORKING_AREA='New York';
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/bee90e63-4c2f-4767-bbfa-fb79325fae3b)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.

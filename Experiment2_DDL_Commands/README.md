@@ -1,4 +1,6 @@
 # Experiment 2: DDL Commands
+### Name : MOHAMMAD SHAHIL
+### Register Number : 212223240044
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
@@ -105,123 +107,196 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a new table named contacts with the following specifications:
+contact_id as INTEGER and primary key.
+first_name as TEXT and not NULL.
+last_name as TEXT and not NULL.
+email as TEXT.
+phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE contacts(
+contact_id INT PRIMARY KEY,
+first_name TEXT NOT NULL,
+last_name TEXT NOT NULL,
+email TEXT,
+phone TEXT NOT NULL CHECK(LENGTH(phone)>=10)
+);
+
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/cb6e0a5d-32d2-4819-8e66-ceca9c27428a)
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert the following products into the Products table:
+Name        Category     Price       Stock
+----------  -----------  ----------  ----------
+Smartphone  Electronics  800         150
+Headphones  Accessories  200         300
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Products(Name,Category,Price,Stock) 
+VALUES ('Smartphone','Electronics','800','150');
+INSERT INTO Products(Name,Category,Price,Stock)
+VALUES ('Headphones','Accessories','200','300');
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-05-03 104726](https://github.com/user-attachments/assets/5f06893a-977d-44cd-bab7-64aef6ef977b)
+
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL Query to add an attribute designation in the employee table with the data type VARCHAR(50).
 
 ```sql
--- Paste your SQL code below for Question 3
+ALTER TABLE employee ADD designation varchar(50);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/dacc0bde-962e-4878-93eb-2d1ebb7361f7)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert a product with ProductID 104, Name Tablet, and Category Electronics into the Products table, where Price and Stock should use default values.
 
 ```sql
--- Paste your SQL code below for Question 4
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES ('104','Tablet','Electronics','100','50');
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/af64f42c-56c7-4bef-a145-3515d22253b1)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Orders(
+OrderID INT PRIMARY KEY,
+OrderDate DATE NOT NULL,
+CustomerID INT,
+FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
+);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/4c9398ca-de58-47fa-96a6-8dbc202ece98)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Invoices with the following constraints:
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+DueDate as DATE should be greater than the InvoiceDate.
+Amount as REAL should be greater than 0.
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE Invoices(
+InvoiceID INT PRIMARY KEY,
+InvoiceDate DATE,
+DueDate DATE CHECK(DueDate>InvoiceDate),
+Amount REAL CHECK(Amount>0)
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/18cce143-dceb-42c8-adf8-77f1b1d13b99)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Invoices with the following constraints:
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+Amount as REAL should be greater than 0.
+DueDate as DATE should be greater than the InvoiceDate.
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Invoices(
+InvoiceID INT PRIMARY KEY,
+InvoiceDate DATE,
+Amount REAL CHECK(Amount>0),
+DueDate DATE CHECK(DueDate>InvoiceDate),
+OrderID INT,
+FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/4b57f161-7e2d-4e37-9d7c-0da475ff8bd6)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Tasks with the following columns:
+TaskID as INTEGER
+TaskName as TEXT
+DueDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE Tasks(
+TaskID INTEGER,
+TaskName TEXT,
+DueDate DATE
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/9f9a0a4e-5d8a-4663-98ae-536cf84a0baf)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert all products from Discontinued_products into Products.
+Table attributes are ProductID, ProductName, Price, Stock
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Products(ProductID,ProductName,Price,Stock)
+SELECT ProductID,ProductName,Price,Stock FROM Discontinued_Products;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/53800105-544f-4392-8f0f-344bcb0a500a)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write an SQL Query to add the attributes designation, net_salary, and dob to the Companies table with the following data types:
+designation as VARCHAR(50)
+net_salary as NUMBER
+dob as DATE
 
 ```sql
--- Paste your SQL code below for Question 10
+ALTER TABLE Companies 
+ADD COLUMN designation varchar(50);
+ALTER TABLE Companies 
+ADD COLUMN net_salary number;
+ALTER TABLE Companies 
+ADD COLUMN dob date;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/0c063267-1d3c-486d-9b6a-4770063e4b2c)
+
 
 
 ## RESULT
